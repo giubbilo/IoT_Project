@@ -20,7 +20,6 @@ module RadioTossC @safe() {
 implementation {
 
   message_t packet;
-  uint16_t indexConnected[8] = {0, 0, 0, 0, 0, 0, 0, 0};
   uint8_t i=0;
 
   bool locked;
@@ -47,17 +46,17 @@ implementation {
   }
   
   event void MilliTimer.fired() {
-    if(TOS_NODE_ID == 1) return;
     if (locked) return;
     else {
       radio_toss_msg_t* rcm = (radio_toss_msg_t*)call Packet.getPayload(&packet, sizeof(radio_toss_msg_t));
       if (rcm == NULL) {
 		return;
       }
-      
-      if (call AMSend.send(1, &packet, sizeof(radio_toss_msg_t)) == SUCCESS) {
+      if (TOS_NODE_ID != 1) {
       	rcm->sender = TOS_NODE_ID;
       	rcm->type = 0; // ACK TYPE
+      	rcm->dest = 1;
+      	call AMSend.send(rcm->dest, &packet, sizeof(radio_toss_msg_t));
 		dbg("radio_send", "Try to connect...send ACK to PAN coordinator\n");	
 		//dbg_clear("radio_send", " at time %s \n", sim_time_string());
       }
@@ -68,28 +67,38 @@ implementation {
     if (len != sizeof(radio_toss_msg_t)) return;
     else {
     	radio_toss_msg_t* rcm = (radio_toss_msg_t*)payload;
-    	if(TOS_NODE_ID == 1 && rcm->type==0) {
-    		dbg("radio_rec", "Received ACK from %d\n", rcm->sender-1);
-    		indexConnected[rcm->sender-2] = rcm->sender-1; 
-    		
-    		for (i = 0; i < 8; ++i) {
-  				printf("%u ", indexConnected[i]);
-			}
-			printf("\n");
+    	// dbg("radio_rec", "rcm->sender: %d, rcm->dest: %d, rcm->type: %d\n", rcm->sender, rcm->dest, rcm->type);
+    	if (TOS_NODE_ID != 1 /*&& rcm->type == 1*/) {
+			dbg("radio_rec", "Received CONNACK from PAN coordinator, node: %d connected !!!\n", TOS_NODE_ID-1);
+			indexConnAckReceived[TOS_NODE_ID-2] = TOS_NODE_ID-1;
+    		// for (i = 0; i < 8; ++i) { printf("%u ", indexConnAckReceived[i]); } printf("\n"); // stampa connack ricevuti correttamente
+    	}
+    	
+    	if(TOS_NODE_ID == 1 && rcm->type == 0) {
+    		dbg("radio_rec", "Received ACK from node: %d\n", rcm->sender-1);
+    		indexAckReceived[rcm->sender-2] = rcm->sender-1;
+    		dbg("radio_send", "Send CONNACK to node: %d\n", rcm->sender-1);	
+    		rcm->type = 1; // CONNACK TYPE
+    		rcm->dest = rcm->sender;
+    		rcm->sender = 1;
+    		call AMSend.send(rcm->dest, &packet, sizeof(radio_toss_msg_t));
+    		 for (i = 0; i < 8; ++i) { printf("%u ", indexAckReceived[i]); } printf("\n"); // stampa ack ricevuti correttamente
     	}
     	return bufPtr;
     }
   }
 
   event void AMSend.sendDone(message_t* bufPtr, error_t error) {
+  
   	if (&packet == bufPtr && error == SUCCESS) {
       	dbg("radio_send", "Packet sent...\n");
       	locked = TRUE;
   	}
-  	/*if (error != SUCCESS) {
-  		dbg("radio_send", "Packet LOST, send again to PAN...\n");
-  		call AMSend.send(1, &packet, sizeof(radio_toss_msg_t));
-  	}*/
+  	if (indexAckReceived[TOS_NODE_ID-2] == 0 && TOS_NODE_ID != 1) {
+		dbg("radio_send", "PACKET LOST...send AGAIN ACK to PAN coordinator\n");	
+		call AMSend.send(1, &packet, sizeof(radio_toss_msg_t));
+		//dbg_clear("radio_send", " at time %s \n", sim_time_string());
+    }
   }
 
 }

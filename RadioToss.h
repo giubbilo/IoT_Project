@@ -48,6 +48,9 @@ typedef nx_struct radio_toss_msg {
 	nx_uint8_t data;
 } radio_toss_msg_t;
 
+uint16_t indexAckReceived[8] = {0};
+uint16_t indexConnAckReceived[8] = {0};
+
 enum {
   AM_RADIO_COUNT_MSG = 6,
 };
