@@ -1,0 +1,194 @@
+user@user-iot:~/Documents/10775105_10867052/RadioRoute$ python RunSimulationScript.py
+********************************************
+*                                          *
+*             TOSSIM Script                *
+*                                          *
+********************************************
+Initializing mac....
+Initializing radio channels....
+    using topology file: topology.txt
+    using noise file: meyer-heavy.txt
+Initializing simulator....
+Activate debug message on channel init
+Activate debug message on channel boot
+Activate debug message on channel timer
+Activate debug message on channel led_0
+Activate debug message on channel led_1
+Activate debug message on channel led_2
+Activate debug message on channel radio
+Activate debug message on channel radio_send
+Activate debug message on channel radio_rec
+Activate debug message on channel radio_pack
+Creating node 1...
+>>>Will boot at time 0 [sec]
+Creating node 2...
+>>>Will boot at time 0 [sec]
+Creating node 3...
+>>>Will boot at time 0 [sec]
+Creating node 4...
+>>>Will boot at time 0 [sec]
+Creating node 5...
+>>>Will boot at time 0 [sec]
+Creating node 6...
+>>>Will boot at time 0 [sec]
+Creating node 7...
+>>>Will boot at time 0 [sec]
+Creating radio channels...
+>>>Setting radio channel from node  1  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  6  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  6  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  7  with gain  -60.0  dBm
+>>>Setting radio channel from node  7  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  7  with gain  -60.0  dBm
+>>>Setting radio channel from node  7  to node  6  with gain  -60.0  dBm
+Initializing Closest Pattern Matching (CPM)...
+Reading noise model data file: meyer-heavy.txt
+Loading:##Done!
+>>>Creating noise model for node: 1
+>>>Creating noise model for node: 2
+>>>Creating noise model for node: 3
+>>>Creating noise model for node: 4
+>>>Creating noise model for node: 5
+>>>Creating noise model for node: 6
+>>>Creating noise model for node: 7
+
+
+
+Start simulation with TOSSIM! 
+
+
+
+DEBUG (1): Application booted!
+DEBUG (7): Application booted!
+DEBUG (3): Application booted!
+DEBUG (6): Application booted!
+DEBUG (2): Application booted!
+DEBUG (5): Application booted!
+DEBUG (4): Application booted!
+DEBUG (7): Radio ON on node 7!
+DEBUG (6): Radio ON on node 6!
+DEBUG (1): Radio ON on node 1!
+DEBUG (3): Radio ON on node 3!
+DEBUG (4): Radio ON on node 4!
+DEBUG (2): Radio ON on node 2!
+DEBUG (5): Radio ON on node 5!
+DEBUG (5): Timer 1 started!
+DEBUG (1): Timer 1 started!
+DEBUG (1): Sending packet from node 1...
+DEBUG (2): Timer 1 started!
+DEBUG (6): Timer 1 started!
+DEBUG (7): Timer 1 started!
+DEBUG (4): Timer 1 started!
+DEBUG (3): Timer 1 started!
+DEBUG (3): Received a ROUTE_REQ at time 0:0:4.946670517
+DEBUG (3): Sending a ROUTE_REQ in broadcast
+DEBUG (2): Received a ROUTE_REQ at time 0:0:4.946670517
+DEBUG (2): Sending a ROUTE_REQ in broadcast
+DEBUG (1): Packet sent successfully at time 0:0:4.946838362 
+DEBUG (4): Received a ROUTE_REQ at time 0:0:5.125244092
+DEBUG (4): Sending a ROUTE_REQ in broadcast
+DEBUG (1): Received a ROUTE_REQ at time 0:0:5.125244092
+DEBUG (1): Sending a ROUTE_REQ in broadcast
+DEBUG (2): Packet sent successfully at time 0:0:5.125411937 
+DEBUG (5): Received a ROUTE_REQ at time 0:0:5.210250845
+DEBUG (5): Sending a ROUTE_REQ in broadcast
+DEBUG (4): Received a ROUTE_REQ at time 0:0:5.210250845
+DEBUG (4): Sending a ROUTE_REQ in broadcast
+DEBUG (1): Received a ROUTE_REQ at time 0:0:5.210250845
+DEBUG (1): Sending a ROUTE_REQ in broadcast
+DEBUG (3): Packet sent successfully at time 0:0:5.210418691 
+
+DEBUG (6): Resto 1 - Node 6
+DEBUG (6): Led 0 status 0
+DEBUG (6): Led 1 status 1
+DEBUG (6): Led 2 status 0
+DEBUG (6): Messages received and sent from node 6: 1
+
+DEBUG (6): Received a ROUTE_REQ at time 0:0:5.494644132
+DEBUG (6): Sending a ROUTE_REQ in broadcast
+DEBUG (3): Received a ROUTE_REQ at time 0:0:5.494644132
+DEBUG (3): Sending a ROUTE_REQ in broadcast
+DEBUG (2): Received a ROUTE_REQ at time 0:0:5.494644132
+DEBUG (2): Sending a ROUTE_REQ in broadcast
+DEBUG (4): Packet sent successfully at time 0:0:5.494811977 
+DEBUG (7): Received a ROUTE_REQ at time 0:0:5.684112521
+DEBUG (7): I am the destination, set cost to 1 and send a ROUTE_REPLY in broadcast
+
+DEBUG (6): Resto 0 - Node 6
+DEBUG (6): Led 0 status 1
+DEBUG (6): Led 1 status 1
+DEBUG (6): Led 2 status 0
+DEBUG (6): Messages received and sent from node 6: 2
+
+DEBUG (6): Received a ROUTE_REQ at time 0:0:5.684112521
+DEBUG (6): Sending a ROUTE_REQ in broadcast
+DEBUG (3): Received a ROUTE_REQ at time 0:0:5.684112521
+DEBUG (3): Sending a ROUTE_REQ in broadcast
+DEBUG (5): Packet sent successfully at time 0:0:5.684280367 
+DEBUG (7): Received a ROUTE_REQ at time 0:0:6.071014370
+DEBUG (7): I am the destination, set cost to 1 and send a ROUTE_REPLY in broadcast
+DEBUG (5): Received a ROUTE_REQ at time 0:0:6.071014370
+DEBUG (5): Sending a ROUTE_REQ in broadcast
+DEBUG (4): Received a ROUTE_REQ at time 0:0:6.071014370
+DEBUG (4): Sending a ROUTE_REQ in broadcast
+DEBUG (6): Packet sent successfully at time 0:0:6.071182216 
+
+DEBUG (6): Resto 1 - Node 6
+DEBUG (6): Led 0 status 1
+DEBUG (6): Led 1 status 0
+DEBUG (6): Led 2 status 0
+DEBUG (6): Messages received and sent from node 6: 3
+
+DEBUG (6): Received a ROUTE_REPLY at time 0:0:6.361389141
+DEBUG (6): Sending a ROUTE_REPLY in broadcast
+DEBUG (5): Received a ROUTE_REPLY at time 0:0:6.361389141
+DEBUG (5): Sending a ROUTE_REPLY in broadcast
+DEBUG (7): Packet sent successfully at time 0:0:6.361556987 
+
+DEBUG (6): Resto 1 - Node 6
+DEBUG (6): Led 0 status 1
+DEBUG (6): Led 1 status 1
+DEBUG (6): Led 2 status 0
+DEBUG (6): Messages received and sent from node 6: 4
+
+DEBUG (6): Received a ROUTE_REPLY at time 0:0:6.837905842
+DEBUG (3): Received a ROUTE_REPLY at time 0:0:6.837905842
+DEBUG (3): Sending a ROUTE_REPLY in broadcast
+DEBUG (5): Packet sent successfully at time 0:0:6.838073688 
+DEBUG (5): Received a ROUTE_REPLY at time 0:0:6.938507044
+DEBUG (4): Received a ROUTE_REPLY at time 0:0:6.938507044
+DEBUG (4): Sending a ROUTE_REPLY in broadcast
+DEBUG (6): Packet sent successfully at time 0:0:6.938674890 
+DEBUG (5): Received a ROUTE_REPLY at time 0:0:7.105300874
+DEBUG (4): Received a ROUTE_REPLY at time 0:0:7.105300874
+DEBUG (1): Received a ROUTE_REPLY at time 0:0:7.105300874
+DEBUG (3): Packet sent successfully at time 0:0:7.105468720 
+
+DEBUG (6): Resto 2 - Node 6
+DEBUG (6): Led 0 status 1
+DEBUG (6): Led 1 status 1
+DEBUG (6): Led 2 status 1
+DEBUG (6): Messages received and sent from node 6: 5
+
+DEBUG (6): Received a ROUTE_REPLY at time 0:0:7.303268428
+DEBUG (3): Received a ROUTE_REPLY at time 0:0:7.303268428
+DEBUG (2): Received a ROUTE_REPLY at time 0:0:7.303268428
+DEBUG (2): Sending a ROUTE_REPLY in broadcast
+DEBUG (4): Packet sent successfully at time 0:0:7.303436273 
+DEBUG (4): Received a ROUTE_REPLY at time 0:0:7.474731437
+DEBUG (2): Packet sent successfully at time 0:0:7.474899283 
+
+
+
+Simulation finished!
