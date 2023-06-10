@@ -1,4 +1,4 @@
-COMPONENT=Project1AppC
+COMPONENT=RadioTossAppC
 
 include $(MAKERULES)
 
