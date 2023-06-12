@@ -53,7 +53,6 @@ t.addChannel("error",out);
 
 
 
-
 print "Creating PAN coordinator...";
 node1 =t.getNode(1);
 time1 = 0*t.ticksPerSecond(); #instant at which each node should be turned on
