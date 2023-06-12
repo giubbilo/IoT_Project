@@ -9,7 +9,7 @@
 #include <sys/socket.h>
 
 #define SERVER_IP "127.0.0.1"  // Localhost IP address
-#define SERVER_PORT 1234      // Port number for the server
+#define SERVER_PORT 1234       // Port number for the server
 
 module Project1C @safe()
 {
@@ -138,9 +138,9 @@ implementation
      					msg->type = 4; // SUB TYPE
    						msg->dest = 1;
   						msg->sender = TOS_NODE_ID;
-						if(msg->topic == 0) dbg("radio_rec", "PUBBLISH, topic: TEMPERATURE payload: %d\n", msg->data);
-						else if(msg->topic == 1) dbg("radio_rec", "PUBBLISH, topic: HUMIDITY payload: %d\n", msg->data);
-						else if(msg->topic == 2) dbg("radio_rec", "PUBBLISH, topic: LUMINOSITY payload: %d\n", msg->data);
+						if(msg->topic == 0) dbg("radio_rec", "PUBLISH, topic: TEMPERATURE payload: %d\n", msg->data);
+						else if(msg->topic == 1) dbg("radio_rec", "PUBLISH, topic: HUMIDITY payload: %d\n", msg->data);
+						else if(msg->topic == 2) dbg("radio_rec", "PUBLISH, topic: LUMINOSITY payload: %d\n", msg->data);
 						call AMSend.send(1, &packet, sizeof(msg_t));
 						//dbg_clear("radio_send", " at time %s \n", sim_time_string());
 					}
@@ -187,47 +187,49 @@ implementation
     						
 						}
 						dbg("radio_rec", "Forward to node-red \n");
-								// Send the message to Node-RED TCP node
-        						// Create socket
-        						sockfd = socket(AF_INET, SOCK_STREAM, 0);
-        						if (sockfd == -1) {
-           	 						dbgerror("tcp", "Socket creation failed\n");
-            						return;
-        						}
-
-        						// Set server address
-        						servaddr.sin_family = AF_INET;
-        						servaddr.sin_addr.s_addr = inet_addr(SERVER_IP);
-        						servaddr.sin_port = htons(SERVER_PORT);
-
-        						// Connect to the server
-       							if (connect(sockfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) != 0) {
-           							dbgerror("tcp", "Connection with the server failed\n");
-            						close(sockfd);
-            						return;
-        						}
-
-        						// Send the message
-        						if (send(sockfd, msg, sizeof(msg_t), 0) == -1) {
-            						dbgerror("tcp", "Failed to send message\n");
-            						return;
-        						}
+						// Send the message to Node-RED TCP node
+        				// Create socket
+        				sockfd = socket(AF_INET, SOCK_STREAM, 0);
+        				if (sockfd == -1)
+        				{
+           	 				dbgerror("tcp", "Socket creation failed\n");
+            				return;
+        				}
+   						// Set server address
+      					servaddr.sin_family = AF_INET;
+      					servaddr.sin_addr.s_addr = inet_addr(SERVER_IP);
+        				servaddr.sin_port = htons(SERVER_PORT);
+        				// Connect to the server
+       					if (connect(sockfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) != 0)
+       					{
+           					dbgerror("tcp", "Connection with the server failed\n");
+            				close(sockfd);
+            				return;
+        				}
+        				// Send the message
+        				if (send(sockfd, msg, sizeof(msg_t), 0) == -1)
+        				{
+            				dbgerror("tcp", "Failed to send message\n");
+            				return;
+        				}
     					close(sockfd);
-    	 		}
+    	 			}
+    			}
     		}
-    	}
     	return bufPtr;
 	}
 
 	event void AMSend.sendDone(message_t* bufPtr, error_t error)
   	{
   		msg_t* msg = (msg_t*)call Packet.getPayload(&packet, sizeof(msg_t));
-  		if (&packet == bufPtr && error == SUCCESS) {
+  		if(&packet == bufPtr && error == SUCCESS)
+  		{
       		//dbg("radio_send", "Packet sent...\n");
       		locked = TRUE;	
   		}
   		if ((indexConnReceived[TOS_NODE_ID-2] == 0 || indexConnAckReceived[TOS_NODE_ID-2] == 0)  && TOS_NODE_ID != 1) 
-  		{ // If i'm not the PAN and i don't have received the CONNACK or my CONN message did not arrived to the PAN i resend it (QoS 1)
+  		{	
+  			// If i'm not the PAN and i don't have received the CONNACK or my CONN message did not arrived to the PAN i resend it (QoS 1)
 			dbg("radio_send", "PACKET LOST...send AGAIN CONN to PAN coordinator\n");	
 			msg->type = 0; // CONN TYPE
    			msg->sender = TOS_NODE_ID;
@@ -235,5 +237,5 @@ implementation
 			//dbg_clear("radio_send", " at time %s \n", sim_time_string());
     	}
   	}
-}
+} // END implementation
 
