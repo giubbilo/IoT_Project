@@ -1,5 +1,5 @@
 # Project1 - LIGHTWEIGHT PUBLISH-SUBSCRIBE APPLICATION PROTOCOL
-Internet of Things project a.y. 22/23 | Politecnico di Milano
+Politecnico di Milano | Internet of Things project a.y. 22/23
 
 You are requested to design and implement in TinyOS a lightweight publishsubscribe application protocol similar to MQTT and test it with simulations
 on a star-shaped network topology composed of 8 client nodes connected to a PAN coordinator. The PAN coordinator acts as an MQTT broker.
