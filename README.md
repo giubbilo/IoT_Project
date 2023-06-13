@@ -1,6 +1,7 @@
 # Project1 - LIGHTWEIGHT PUBLISH-SUBSCRIBE APPLICATION PROTOCOL
 Politecnico di Milano | Internet of Things project a.y. 22/23
 
+## Specification
 You are requested to design and implement in TinyOS a lightweight publishsubscribe application protocol similar to MQTT and test it with simulations
 on a star-shaped network topology composed of 8 client nodes connected to a PAN coordinator. The PAN coordinator acts as an MQTT broker.
 
@@ -11,10 +12,12 @@ The following features need to be implemented:
 4. You are free to test the implementation in the simulation environment you prefer (TOSSIM or Cooja), with at least 3 nodes subscribing to more than 1 topic. The payload of PUBLISH messages on all topics can be a random number.
 5. The PAN Coordinator (Broker node) should be connected to NodeRED, and periodically transmit data received on the topics to ThingsSpeak through MQTT. Thingspeak must show one chart for each topic on a public channel.
 
+
 Tool used:
 - TinyOS
 - Tossim
 - Node-RED
 - Thingspeak
 
-Developed by Davide Giannubilo & Salvatore Gabriele Karra
+## Credits
+Developed by Davide Giannubilo & Salvatore Gabriele Karra | June 2023
