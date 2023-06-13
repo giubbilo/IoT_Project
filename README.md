@@ -14,10 +14,12 @@ The following features need to be implemented:
 
 
 ## Tools used:
-- TinyOS
+- TinyOS 
+  - nesC
 - Tossim
+  - Python
 - Node-RED
-- Thingspeak
+- ThingSpeak
 
 ## Credits
 Developed by Davide Giannubilo & Salvatore Gabriele Karra | June 2023
