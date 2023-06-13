@@ -1,118 +1,118 @@
 [
-  {
-    "id": "4a2e3c3f.0d3094",
-    "type": "tab",
-    "label": "Flow 1",
-    "disabled": false,
-    "info": ""
-  },
-  {
-    "id": "3ec1800a.c3c2f8",
-    "type": "tcp in",
-    "z": "4a2e3c3f.0d3094",
-    "name": "Receive from TinyOS",
-    "server": "server",
-    "host": "",
-    "port": "1234",
-    "datamode": "stream",
-    "newline": "",
-    "topic": "",
-    "base64": false,
-    "x": 130,
-    "y": 260,
-    "wires": [
-      [
-        "51bcf877.7747c8"
-      ]
-    ]
-  },
-  {
-    "id": "51bcf877.7747c8",
-    "type": "function",
-    "z": "4a2e3c3f.0d3094",
-    "name": "Parse Message",
-    "func": "var bufferArray = msg.payload; // Assuming msg.payload contains the buffer array\n\n// Convert the array into a buffer object\nvar buffer = Buffer.from(bufferArray);\nvar topic = \"field\"+(buffer[4]+1);\n\nvar value = buffer[3];\n//node.warn(topic+\" value: \" + value);\nmsg.newUrl = \"https://api.thingspeak.com/update?api_key=7GD113CORBW4HZ56&\"+topic+\"=\"+value;\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "x": 350,
-    "y": 260,
-    "wires": [
-      [
-        "c4d9a621.5495a8",
-        "ed31ebd3.72c75"
-      ]
-    ]
-  },
-  {
-    "id": "c4d9a621.5495a8",
-    "type": "debug",
-    "z": "4a2e3c3f.0d3094",
-    "name": "",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "payload",
-    "x": 600,
-    "y": 220,
-    "wires": []
-  },
-  {
-    "id": "ed31ebd3.72c75",
-    "type": "change",
-    "z": "4a2e3c3f.0d3094",
-    "name": "",
-    "rules": [
-      {
-        "t": "set",
-        "p": "url",
-        "pt": "msg",
-        "to": "newUrl",
-        "tot": "msg"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 590,
-    "y": 280,
-    "wires": [
-      [
-        "ba70edf6.2ec73"
-      ]
-    ]
-  },
-  {
-    "id": "ba70edf6.2ec73",
-    "type": "http request",
-    "z": "4a2e3c3f.0d3094",
-    "name": "",
-    "method": "GET",
-    "ret": "txt",
-    "url": "",
-    "tls": "",
-    "x": 800,
-    "y": 280,
-    "wires": [
-      [
-        "151534f9.b8c003"
-      ]
-    ]
-  },
-  {
-    "id": "151534f9.b8c003",
-    "type": "debug",
-    "z": "4a2e3c3f.0d3094",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "payload",
-    "x": 1000,
-    "y": 280,
-    "wires": []
-  }
+    {
+        "id": "723d6915.6a279",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3b0fed5.92bdb92",
+        "type": "tcp in",
+        "z": "723d6915.6a279",
+        "name": "Receive from TinyOS",
+        "server": "server",
+        "host": "",
+        "port": "1234",
+        "datamode": "stream",
+        "newline": "",
+        "topic": "",
+        "base64": false,
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "da0f8c5a.72c8e"
+            ]
+        ]
+    },
+    {
+        "id": "da0f8c5a.72c8e",
+        "type": "function",
+        "z": "723d6915.6a279",
+        "name": "Parse Message",
+        "func": "var bufferArray = msg.payload; // Assuming msg.payload contains the buffer array\n\n// Convert the array into a buffer object\nvar buffer = Buffer.from(bufferArray);\nvar topic = \"field\"+(buffer[4]+1);\n\nvar value = buffer[3];\n//node.warn(topic+\" value: \" + value);\nmsg.newUrl = \"https://api.thingspeak.com/update?api_key=7GD113CORBW4HZ56&\"+topic+\"=\"+value;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 260,
+        "wires": [
+            [
+                "e4cc4714.3ce378",
+                "1ffd1b3.7a155e5"
+            ]
+        ]
+    },
+    {
+        "id": "e4cc4714.3ce378",
+        "type": "debug",
+        "z": "723d6915.6a279",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 640,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1ffd1b3.7a155e5",
+        "type": "change",
+        "z": "723d6915.6a279",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "newUrl",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "438c404b.518858"
+            ]
+        ]
+    },
+    {
+        "id": "438c404b.518858",
+        "type": "http request",
+        "z": "723d6915.6a279",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "",
+        "x": 840,
+        "y": 280,
+        "wires": [
+            [
+                "7fa02ac5.06a884"
+            ]
+        ]
+    },
+    {
+        "id": "7fa02ac5.06a884",
+        "type": "debug",
+        "z": "723d6915.6a279",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1060,
+        "y": 280,
+        "wires": []
+    }
 ]
