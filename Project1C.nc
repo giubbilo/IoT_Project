@@ -103,46 +103,44 @@ implementation
     				{
 						dbg("radio_rec", "Received CONNACK from PAN coordinator! Node: %d connected!\n", TOS_NODE_ID - 1);
 						indexConnAckReceived[TOS_NODE_ID - 2] = TOS_NODE_ID - 1;
-						// for (i = 0; i < 8; ++i) { printf("%u ", indexConnAckReceived[i]); } printf("\n"); // Stampa CONNACK ricevuti correttamente
-						if (indexSubSended[TOS_NODE_ID-2] == 0)
-    					{ // If i don't have sended the SUB message i send it (QoS 0)
+						// for (i = 0; i < 8; ++i) { printf("%u ", indexConnAckReceived[i]); } printf("\n"); // CONNACK received correctly
+						if(indexSubSended[TOS_NODE_ID - 2] == 0)
+    					{ 	// If I didn't send the SUB message yet (QoS 0)
     						msg_t* msg = (msg_t*)call Packet.getPayload(&packet, sizeof(msg_t));
-    						indexSubSended[TOS_NODE_ID-2] == 1;
-							msg->topic = TOS_NODE_ID%3;
-      						msg->type = 2; // SUB TYPE
-    						msg->dest = 1;
-   							msg->sender = TOS_NODE_ID;
-							if(msg->topic == 0) dbg("radio_send", "CONNECTED !!! Send a SUBSCRIBE with topic: TEMPERATURE\n");
-							else if(msg->topic == 1) dbg("radio_send", "CONNECTED !!! Send a SUBSCRIBE with topic: HUMIDITY\n");
-							else if(msg->topic == 2) dbg("radio_send", "CONNECTED !!! Send a SUBSCRIBE with topic: LUMINOSITY\n");
+    						indexSubSended[TOS_NODE_ID - 2] == 1;
+							msg -> topic = TOS_NODE_ID % 3;
+      						msg -> type = 2; // SUB TYPE
+    						msg -> dest = 1;
+   							msg -> sender = TOS_NODE_ID;
+							if(msg -> topic == 0) dbg("radio_send", "CONNECTED !!! Send a SUBSCRIBE with topic: TEMPERATURE\n");
+							else if(msg -> topic == 1) dbg("radio_send", "CONNECTED !!! Send a SUBSCRIBE with topic: HUMIDITY\n");
+							else if(msg -> topic == 2) dbg("radio_send", "CONNECTED !!! Send a SUBSCRIBE with topic: LUMINOSITY\n");
 							call AMSend.send(1, &packet, sizeof(msg_t));
-							//dbg_clear("radio_send", " at time %s \n", sim_time_string());
     					}
 					}
 					// SUBACK received
 					if(msg -> type == 3 && indexSubAckReceived[msg -> dest - 2] == 0)
 					{
-						if(msg->topic == 0) dbg("radio_send", "Received SUBACK from PAN coordinator! Node: %d subbed to topic: TEMPERATURE!\n", TOS_NODE_ID - 1);
-						else if(msg->topic == 1) dbg("radio_send", "Received SUBACK from PAN coordinator! Node: %d subbed to topic: HUMIDITY!\n", TOS_NODE_ID - 1);
-						else if(msg->topic == 2) dbg("radio_send", "Received SUBACK from PAN coordinator! Node: %d subbed to topic: LUMINOSITY!\n", TOS_NODE_ID - 1);
+						if(msg -> topic == 0) dbg("radio_send", "Received SUBACK from PAN coordinator! Node: %d subbed to topic: TEMPERATURE!\n", TOS_NODE_ID - 1);
+						else if(msg -> topic == 1) dbg("radio_send", "Received SUBACK from PAN coordinator! Node: %d subbed to topic: HUMIDITY!\n", TOS_NODE_ID - 1);
+						else if(msg -> topic == 2) dbg("radio_send", "Received SUBACK from PAN coordinator! Node: %d subbed to topic: LUMINOSITY!\n", TOS_NODE_ID - 1);
 						indexSubAckReceived[TOS_NODE_ID - 2] = TOS_NODE_ID - 1;
-						indexSubbedTopic[TOS_NODE_ID-2] = msg->topic;
-						 for (i = 0; i < 8; ++i) { printf("%u ", indexSubAckReceived[i]); } printf("\n"); // stampa SUBACK ricevuti correttamente
-						 for (i = 0; i < 8; ++i) { printf("%u ", indexSubbedTopic[i]); } printf("\n"); // stampa topic subbati correttamente
+						indexSubbedTopic[TOS_NODE_ID - 2] = msg -> topic;
+						for (i = 0; i < 8; ++i) { printf("%u ", indexSubAckReceived[i]); } printf("\n"); // SUBACK received correctly
+						for (i = 0; i < 8; ++i) { printf("%u ", indexSubbedTopic[i]); } printf("\n"); // Topics of the nodes subscribed
 					}
 					if(indexConnAckReceived[msg -> dest - 2] != 0 && indexSubAckReceived[msg -> dest - 2] != 0)
 					{ 
 						msg_t* msg = (msg_t*)call Packet.getPayload(&packet, sizeof(msg_t));
-						msg->topic = TOS_NODE_ID%3; //sample but not randomic
-						msg->data = TOS_NODE_ID%4*10; //sample but not randomic
-     					msg->type = 4; // SUB TYPE
-   						msg->dest = 1;
-  						msg->sender = TOS_NODE_ID;
-						if(msg->topic == 0) dbg("radio_rec", "PUBLISH, topic: TEMPERATURE payload: %d\n", msg->data);
-						else if(msg->topic == 1) dbg("radio_rec", "PUBLISH, topic: HUMIDITY payload: %d\n", msg->data);
-						else if(msg->topic == 2) dbg("radio_rec", "PUBLISH, topic: LUMINOSITY payload: %d\n", msg->data);
+						msg -> topic = TOS_NODE_ID % 3; // Sample but not random
+						msg -> data = TOS_NODE_ID % 4 * 10; // Sample but not random
+     					msg -> type = 4; // PUB TYPE
+   						msg -> dest = 1;
+  						msg -> sender = TOS_NODE_ID;
+						if(msg -> topic == 0) dbg("radio_rec", "PUBLISH, topic: TEMPERATURE payload: %d\n", msg -> data);
+						else if(msg -> topic == 1) dbg("radio_rec", "PUBLISH, topic: HUMIDITY payload: %d\n", msg -> data);
+						else if(msg -> topic == 2) dbg("radio_rec", "PUBLISH, topic: LUMINOSITY payload: %d\n", msg -> data);
 						call AMSend.send(1, &packet, sizeof(msg_t));
-						//dbg_clear("radio_send", " at time %s \n", sim_time_string());
 					}
     			}
     			if(TOS_NODE_ID == 1) // I am the PAN
@@ -157,7 +155,7 @@ implementation
     					msg -> dest = msg -> sender;
     					msg -> sender = 1;
     					call AMSend.send(msg->dest, bufPtr, sizeof(msg_t));
-    	 				// for (i = 0; i < 8; ++i) { printf("%u ", indexConnReceived[i]); } printf("\n"); // stampa CONN ricevuti correttamente
+    	 				// for (i = 0; i < 8; ++i) { printf("%u ", indexConnReceived[i]); } printf("\n"); // CONN received correctly
     	 			}
     	 			// SUB received
     				if(msg -> type == 2)
@@ -169,7 +167,7 @@ implementation
     					msg -> dest = msg -> sender;
     					msg -> sender = 1;
     					call AMSend.send(msg -> dest, bufPtr, sizeof(msg_t));
-    					// for (i = 0; i < 8; ++i) { printf("%u ", indexSubReceived[i]); } printf("\n"); // stampa SUB ricevuti correttamente
+    					// for (i = 0; i < 8; ++i) { printf("%u ", indexSubReceived[i]); } printf("\n"); // SUB received correctly
     	 			}
     	 			if(msg -> type == 4)
     				{	
@@ -178,7 +176,7 @@ implementation
 						else if(msg->topic == 2) dbg("radio_rec", "PAN -> received PUB from node: %d, to topic: LUMINOSITY with payload: %d\n", msg -> sender - 1, msg->data);
 						for (i = 0; i < 8; ++i) 
 						{ 
-							if(indexSubbedTopic[i] == msg->topic)
+							if(indexSubbedTopic[i] == msg -> topic)
 							{
 								dbg("radio_rec", "Forward to node: %d\n", indexSubAckReceived[i]);
 								call AMSend.send(indexSubAckReceived[i], bufPtr, sizeof(msg_t));
@@ -186,13 +184,13 @@ implementation
     						}
     						
 						}
-						dbg("radio_rec", "Forward to node-red \n");
+						dbg("radio_rec", "Sending PUBLISH messages to Node-RED\n");
 						// Send the message to Node-RED TCP node
         				// Create socket
         				sockfd = socket(AF_INET, SOCK_STREAM, 0);
         				if (sockfd == -1)
         				{
-           	 				dbgerror("tcp", "Socket creation failed\n");
+           	 				dbgerror("tcp", "Socket creation failed!\n");
             				return;
         				}
    						// Set server address
@@ -202,14 +200,14 @@ implementation
         				// Connect to the server
        					if (connect(sockfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) != 0)
        					{
-           					dbgerror("tcp", "Connection with the server failed\n");
+           					dbgerror("tcp", "Connection with the server failed!\n");
             				close(sockfd);
             				return;
         				}
         				// Send the message
         				if (send(sockfd, msg, sizeof(msg_t), 0) == -1)
         				{
-            				dbgerror("tcp", "Failed to send message\n");
+            				dbgerror("tcp", "Failed to send message!\n");
             				return;
         				}
     					close(sockfd);
@@ -234,7 +232,6 @@ implementation
 			msg->type = 0; // CONN TYPE
    			msg->sender = TOS_NODE_ID;
 			call AMSend.send(1, &packet, sizeof(msg_t));
-			//dbg_clear("radio_send", " at time %s \n", sim_time_string());
     	}
   	}
 } // END implementation
