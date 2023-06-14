@@ -19,8 +19,10 @@ module Project1C @safe()
 		interface Receive;
 		interface AMSend;
 		interface Timer<TMilli> as MilliTimer;
+		interface Timer<TMilli> as NodeTimer;
 		interface SplitControl as AMControl;
 		interface Packet;
+		interface Random;
 	}	
 }
 
@@ -32,8 +34,11 @@ implementation
     struct sockaddr_in servaddr;
 	
   	uint8_t i = 0;
+  	uint8_t k = 0;
 
   	bool locked;
+  	
+  	  	
   
   	event void Boot.booted() 
   	{
@@ -88,6 +93,62 @@ implementation
       		}
     	}
   	}
+  	
+  	event void NodeTimer.fired()
+  	{
+  		if(TOS_NODE_ID == 1){
+			msg_t* msg = (msg_t*)call Packet.getPayload(&packet, sizeof(msg_t));
+	  		msg->type = buffer[0][0];
+			msg->sender = buffer[0][1];
+			msg->dest = buffer[0][2]; 
+			msg->data = buffer[0][3];
+	 		msg->topic = buffer[0][4]; 
+	 		if(msg->type!=0){
+				dbg("radio_rec", "Sending PUBLISH messages to Node-RED\n");
+				// Send the message to Node-RED TCP node
+				// Create socket
+				sockfd = socket(AF_INET, SOCK_STREAM, 0);
+				if (sockfd == -1)
+				{
+					dbgerror("tcp", "Socket creation failed!\n");
+					return;
+				}
+				// Set server address
+				servaddr.sin_family = AF_INET;
+				servaddr.sin_addr.s_addr = inet_addr(SERVER_IP);
+				servaddr.sin_port = htons(SERVER_PORT);
+				// Connect to the server
+				if (connect(sockfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) != 0)
+				{
+					dbgerror("tcp", "Connection with the server failed!\n");
+					close(sockfd);
+					return;
+				}
+				// Send the message
+				if (send(sockfd, msg, sizeof(msg_t), 0) == -1)
+				{
+					dbgerror("tcp", "Failed to send message!\n");
+					return;
+				}
+				for(i=0; i<MESSAGE_BUFFER; i++) {for(k=0; k<5; k++) { printf("%u ", buffer[i][k]); } printf("\n");} printf("\n");	
+				// Shift rows up by one starting from the second row
+				for (i = 1; i < MESSAGE_BUFFER; i++) {
+				  for (k = 0; k < 5; k++) {
+					buffer[i - 1][k] = buffer[i][k];
+				  }
+				}
+				
+				close(sockfd);
+				call NodeTimer.startOneShot(100);
+			}
+		}
+  	}
+  	
+  	// Handle for resend if packet lost for QoS0
+  	task void sendHandleQoS0() {
+  		if(call AMSend.send(1, &packet, sizeof(msg_t))==SUCCESS) return;
+		else {dbg("radio_send", "Packet lost, send again...\n"); call AMSend.send(1, &packet, sizeof(msg_t));};
+  	}
 
   	event message_t* Receive.receive(message_t* bufPtr, void* payload, uint8_t len)
   	{
@@ -115,7 +176,8 @@ implementation
 							if(msg -> topic == 0) dbg("radio_send", "CONNECTED !!! Send a SUBSCRIBE with topic: TEMPERATURE\n");
 							else if(msg -> topic == 1) dbg("radio_send", "CONNECTED !!! Send a SUBSCRIBE with topic: HUMIDITY\n");
 							else if(msg -> topic == 2) dbg("radio_send", "CONNECTED !!! Send a SUBSCRIBE with topic: LUMINOSITY\n");
-							call AMSend.send(1, &packet, sizeof(msg_t));
+							
+							post sendHandleQoS0();
     					}
 					}
 					// SUBACK received
@@ -129,18 +191,18 @@ implementation
 						for (i = 0; i < 8; ++i) { printf("%u ", indexSubAckReceived[i]); } printf("\n"); // SUBACK received correctly
 						for (i = 0; i < 8; ++i) { printf("%u ", indexSubbedTopic[i]); } printf("\n"); // Topics of the nodes subscribed
 					}
-					if(indexConnAckReceived[msg -> dest - 2] != 0 && indexSubAckReceived[msg -> dest - 2] != 0)
+					if(indexConnAckReceived[msg -> dest - 2] != 0 && indexSubAckReceived[msg -> dest - 2] != 0) 
 					{ 
 						msg_t* msg = (msg_t*)call Packet.getPayload(&packet, sizeof(msg_t));
-						msg -> topic = TOS_NODE_ID % 3; // Sample but not random
-						msg -> data = TOS_NODE_ID % 4 * 10; // Sample but not random
+						msg -> topic = call Random.rand16()% 3; // Random Topic
+						msg -> data = call Random.rand16()% 31 + 10; // Random Value
      					msg -> type = 4; // PUB TYPE
    						msg -> dest = 1;
   						msg -> sender = TOS_NODE_ID;
 						if(msg -> topic == 0) dbg("radio_rec", "PUBLISH, topic: TEMPERATURE payload: %d\n", msg -> data);
 						else if(msg -> topic == 1) dbg("radio_rec", "PUBLISH, topic: HUMIDITY payload: %d\n", msg -> data);
 						else if(msg -> topic == 2) dbg("radio_rec", "PUBLISH, topic: LUMINOSITY payload: %d\n", msg -> data);
-						call AMSend.send(1, &packet, sizeof(msg_t));
+						post sendHandleQoS0();
 					}
     			}
     			if(TOS_NODE_ID == 1) // I am the PAN
@@ -166,51 +228,38 @@ implementation
     					msg -> type = 3; // SUBACK TYPE
     					msg -> dest = msg -> sender;
     					msg -> sender = 1;
-    					call AMSend.send(msg -> dest, bufPtr, sizeof(msg_t));
+    					if(call AMSend.send(msg -> dest, bufPtr, sizeof(msg_t))!=SUCCESS){
+							dbg("radio_send", "Packet lost, send again...\n"); call AMSend.send(msg -> dest, bufPtr, sizeof(msg_t));
+						}
+
     					// for (i = 0; i < 8; ++i) { printf("%u ", indexSubReceived[i]); } printf("\n"); // SUB received correctly
     	 			}
     	 			if(msg -> type == 4)
     				{	
+    					for(i=0; i<MESSAGE_BUFFER; i++)
+    					{
+    						if(buffer[i][2] == 0)
+    						{
+								buffer[i][0] = msg->type;
+								buffer[i][1] = msg->sender;
+								buffer[i][2] = msg->dest;
+								buffer[i][3] = msg->data;
+								buffer[i][4] = msg->topic;
+								break;
+							}
+    					}
     					if(msg->topic == 0) dbg("radio_rec", "PAN -> received PUB from node: %d, to topic: TEMPERATURE with payload: %d\n", msg -> sender - 1, msg->data);
 						else if(msg->topic == 1) dbg("radio_rec", "PAN -> received PUB from node: %d, to topic: HUMIDITY with payload: %d\n", msg -> sender - 1, msg->data);
 						else if(msg->topic == 2) dbg("radio_rec", "PAN -> received PUB from node: %d, to topic: LUMINOSITY with payload: %d\n", msg -> sender - 1, msg->data);
+						
 						for (i = 0; i < 8; ++i) 
 						{ 
 							if(indexSubbedTopic[i] == msg -> topic)
 							{
 								dbg("radio_rec", "Forward to node: %d\n", indexSubAckReceived[i]);
-								call AMSend.send(indexSubAckReceived[i], bufPtr, sizeof(msg_t));
-								
-    						}
-    						
-						}
-						dbg("radio_rec", "Sending PUBLISH messages to Node-RED\n");
-						// Send the message to Node-RED TCP node
-        				// Create socket
-        				sockfd = socket(AF_INET, SOCK_STREAM, 0);
-        				if (sockfd == -1)
-        				{
-           	 				dbgerror("tcp", "Socket creation failed!\n");
-            				return;
-        				}
-   						// Set server address
-      					servaddr.sin_family = AF_INET;
-      					servaddr.sin_addr.s_addr = inet_addr(SERVER_IP);
-        				servaddr.sin_port = htons(SERVER_PORT);
-        				// Connect to the server
-       					if (connect(sockfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) != 0)
-       					{
-           					dbgerror("tcp", "Connection with the server failed!\n");
-            				close(sockfd);
-            				return;
-        				}
-        				// Send the message
-        				if (send(sockfd, msg, sizeof(msg_t), 0) == -1)
-        				{
-            				dbgerror("tcp", "Failed to send message!\n");
-            				return;
-        				}
-    					close(sockfd);
+								call AMSend.send(indexSubAckReceived[i], bufPtr, sizeof(msg_t));	
+    						}	
+						}call NodeTimer.startOneShot(1000);					
     	 			}
     			}
     		}
