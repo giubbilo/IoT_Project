@@ -8,7 +8,6 @@ implementation
 	components new AMSenderC(AM_RADIO_COUNT_MSG);
 	components new AMReceiverC(AM_RADIO_COUNT_MSG);
 	components new TimerMilliC() as MilliTimer;
-	//components new TimerMilliC() as NodeTimer;
 	components ActiveMessageC;
 	components RandomC;
 	  
@@ -18,7 +17,6 @@ implementation
 	App.AMControl -> ActiveMessageC;
 	App.MilliTimer -> MilliTimer;
 	App.Packet -> AMSenderC;
-	//App.NodeTimer -> NodeTimer;
 	App.Random -> RandomC;
 }
 
