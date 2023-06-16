@@ -142,7 +142,7 @@ implementation
   						msg -> sender = TOS_NODE_ID;
 						if(msg -> topic == 0) dbg("radio_rec", "PUBLISH, topic: TEMPERATURE payload: %d°C\n", msg -> data);
 						else if(msg -> topic == 1) dbg("radio_rec", "PUBLISH, topic: HUMIDITY payload: %d%\n", msg -> data);
-						else if(msg -> topic == 2) dbg("radio_rec", "PUBLISH, topic: LUMINOSITY payload: %dlumen\n", msg -> data);
+						else if(msg -> topic == 2) dbg("radio_rec", "PUBLISH, topic: LUMINOSITY payload: %d watts\n", msg -> data);
 						call AMSend.send(1, &packet, sizeof(msg_t));
 					}
     			}
@@ -192,7 +192,7 @@ implementation
     					}
     					if(msg->topic == 0) dbg("radio_rec", "PAN -> received PUB from node: %d, to topic: TEMPERATURE with payload: %d°C\n", msg -> sender - 1, msg->data);
 						else if(msg->topic == 1) dbg("radio_rec", "PAN -> received PUB from node: %d, to topic: HUMIDITY with payload: %d%\n", msg -> sender - 1, msg->data);
-						else if(msg->topic == 2) dbg("radio_rec", "PAN -> received PUB from node: %d, to topic: LUMINOSITY with payload: %dlumen\n", msg -> sender - 1, msg->data);
+						else if(msg->topic == 2) dbg("radio_rec", "PAN -> received PUB from node: %d, to topic: LUMINOSITY with payload: %d watts\n", msg -> sender - 1, msg->data);
 						
 						for (i = 0; i < 8; ++i) // Forward to node that subbed to the topic of the pubblish
 						{ 
