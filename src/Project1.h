@@ -24,14 +24,17 @@ typedef nx_struct Msg
 	*/
 }msg_t;
 
-
+uint8_t counterPub = 0;
 uint16_t indexConnReceived[8] = {0}; // Containing which node have sent and delivered a CONN message
 uint16_t indexConnAckReceived[8] = {0}; // Containing which node have received a CONNACK message
-uint16_t indexSubSended[8] = {0}; // Containing which node have sent a SUB message
 uint16_t indexSubReceived[8] = {0}; // Containing which node have received a SUB message
 uint16_t indexSubAckReceived[8] = {0}; // Containing which node have received a SUBACK message
 uint16_t indexSubbedTopic[8] = {3, 3, 3, 3, 3, 3, 3, 3}; // Containing the topic of each node
-uint16_t buffer[MESSAGE_BUFFER][5] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}; // Containing the PUBLISH messages of those nodes which are subscribed
+uint16_t buffer[MESSAGE_BUFFER][5] = {{0, 0, 0, 0, 0}, 
+									  {0, 0, 0, 0, 0}, 
+									  {0, 0, 0, 0, 0}, 
+									  {0, 0, 0, 0, 0},
+									  {0, 0, 0, 0, 0}}; // Containing the topic of each node
 
 enum
 {
