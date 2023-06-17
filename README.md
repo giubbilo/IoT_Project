@@ -20,5 +20,7 @@ The following features need to be implemented:
 - Node-RED
 - ThingSpeak
 
+## How to run it
+
 ## Credits
 Developed by Davide Giannubilo & Salvatore Gabriele Karra | June 2023
