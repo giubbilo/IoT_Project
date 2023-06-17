@@ -34,7 +34,7 @@ uint16_t buffer[MESSAGE_BUFFER][5] = {{0, 0, 0, 0, 0},
 									  {0, 0, 0, 0, 0}, 
 									  {0, 0, 0, 0, 0}, 
 									  {0, 0, 0, 0, 0},
-									  {0, 0, 0, 0, 0}}; // Containing the topic of each node
+									  {0, 0, 0, 0, 0}};
 
 enum
 {
