@@ -144,9 +144,9 @@ for i in range(1, 10):
     print ">>>Creating noise model for node:",i;
     t.getNode(i).createNoiseModel()
 
-print "Start simulation with TOSSIM! \n\n\n";
+print "\n\n\nStart simulation with TOSSIM! \n\n\n";
 
-for i in range(0,20000):
+for i in range(0,25000):
 	t.runNextEvent()
 	
 print "\n\n\nSimulation finished!";
