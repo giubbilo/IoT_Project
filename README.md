@@ -22,7 +22,7 @@ The following features need to be implemented:
 
 ## How to run it
 1. Open the terminal
-2. Start Nod-RED or install it if you do not have it
+2. Start Node-RED launching `node-red` command or install it if you do not have it
 3. Import the flow on Node-RED from `Node-RED_flow.pdf`
 4. Open [our ThingSpeak public channel](https://thingspeak.com/channels/2185815) where you can see the charts
 5. Open another terminal window
