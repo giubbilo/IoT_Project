@@ -12,7 +12,7 @@ The following features need to be implemented:
 4. You are free to test the implementation in the simulation environment you prefer (TOSSIM or Cooja), with at least 3 nodes subscribing to more than 1 topic. The payload of PUBLISH messages on all topics can be a random number.
 5. The PAN Coordinator (Broker node) should be connected to NodeRED, and periodically transmit data received on the topics to ThingsSpeak through MQTT. Thingspeak must show one chart for each topic on a public channel.
 
-## Tools used:
+## Tools used
 - TinyOS 
   - nesC
 - Tossim
