@@ -263,7 +263,7 @@ implementation
   		if((indexConnReceived[TOS_NODE_ID - 2] == 0 || indexConnAckReceived[TOS_NODE_ID - 2] == 0)  && TOS_NODE_ID != 1) 
   		{	
   			// If I'm not the PAN and I don't have received the CONNACK or my CONN message did not arrived to the PAN, I have to resend it
-			dbg("radio_send", "Packet lost! Sending again a CONN to PAN coordinator\n");	
+			dbg("radio_send", "Packet lost! Sending again a CONN to PAN\n");	
 			msg -> type = 0; // CONN TYPE
    			msg -> dest = 1;
    			msg -> sender = TOS_NODE_ID;
@@ -272,7 +272,7 @@ implementation
     	if((indexSubReceived[TOS_NODE_ID - 2] == 0 || indexSubAckReceived[TOS_NODE_ID - 2] == 0)  && TOS_NODE_ID != 1 && indexConnAckReceived[TOS_NODE_ID - 2] != 0) 
   		{	
 			// If I'm not the PAN and I don't have received the SUBBACK or my SUB message did not arrived to the PAN, I have to resend it
-			dbg("radio_send", "Packet lost! Sending again a SUB to PAN coordinator\n");	
+			dbg("radio_send", "Packet lost! Sending again a SUB to PAN\n");	
 			msg -> topic = (TOS_NODE_ID - 1) % 3;
 			msg -> type = 2; // SUB TYPE
 			msg -> dest = 1;
