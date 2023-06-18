@@ -167,11 +167,7 @@ implementation
     					msg -> type = 3; // SUBACK TYPE
     					msg -> dest = msg -> sender;
     					msg -> sender = 1;
-    					if(call AMSend.send(msg -> dest, bufPtr, sizeof(msg_t)) != SUCCESS)
-    					{
-							dbg("radio_send", "Packet lost, send again...\n");
-							call AMSend.send(msg -> dest, bufPtr, sizeof(msg_t));
-						}
+						call AMSend.send(msg -> dest, bufPtr, sizeof(msg_t));
 						//for(i = 0; i < 8; ++i) { printf("%u ", indexConnReceived[i]); } printf("\n"); // CONN received correctly
     					//for(i = 0; i < 8; ++i) { printf("%u ", indexSubReceived[i]); } printf("\n"); // SUB received correctly
     	 			}
