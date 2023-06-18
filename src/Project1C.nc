@@ -235,7 +235,6 @@ implementation
 								dbg("error", "Failed to send message!\n");
 								return;
 							}
-							// for(i=0; i<MESSAGE_BUFFER; i++) {for(k=0; k<5; k++) { printf("%u ", buffer[i][k]); } printf("\n");} printf("\n");	// Print the buffer
 							// Empty the buffer by deleting the message alredy send
 							for(i = 1; i < MESSAGE_BUFFER; i++)
 							{
@@ -253,7 +252,7 @@ implementation
     	return bufPtr;
 	}
 
-	event void AMSend.sendDone(message_t* bufPtr, error_t error) // Handle retrasmission if packet lost
+	event void AMSend.sendDone(message_t* bufPtr, error_t error) // Handle retransmission if packets get lost
   	{
   		msg_t* msg = (msg_t*)call Packet.getPayload(&packet, sizeof(msg_t));
   		if(&packet == bufPtr && error == SUCCESS)
