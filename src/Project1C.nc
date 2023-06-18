@@ -256,7 +256,6 @@ implementation
 	event void AMSend.sendDone(message_t* bufPtr, error_t error) // Handle retrasmission if packet lost
   	{
   		msg_t* msg = (msg_t*)call Packet.getPayload(&packet, sizeof(msg_t));
-  		//dbg("radio", "\nsono il nodo %d\n", TOS_NODE_ID - 1);
   		if(&packet == bufPtr && error == SUCCESS)
   		{
       		//dbg("radio_send", "Packet sent...\n");
