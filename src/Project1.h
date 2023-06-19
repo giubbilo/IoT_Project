@@ -24,10 +24,10 @@ typedef nx_struct Msg
 	*/
 }msg_t;
 
-uint16_t indexConnReceived[8] = {0}; // Contains which node has received a CONN message
-uint16_t indexConnAckReceived[8] = {0}; // Contains which node has received a CONNACK message
-uint16_t indexSubReceived[8] = {0}; // Contains which node has received a SUB message
-uint16_t indexSubAckReceived[8] = {0}; // Contains which node has received a SUBACK message
+uint16_t indexConnReceived[8] = {0}; // Contains which node has correctly sent a CONN message to PAN
+uint16_t indexConnAckReceived[8] = {0}; // Contains which node has correctly received a CONNACK message
+uint16_t indexSubReceived[8] = {0}; // Contains which node has correctly sent a SUB message to PAN
+uint16_t indexSubAckReceived[8] = {0}; // Contains which node has correctly received a SUBACK message
 // Contains the subscribed topic of each node. Filled with 3 because we cannot have a topic that has "3" as integer
 uint16_t indexSubbedTopic[8] = {3, 3, 3, 3, 3, 3, 3, 3}; 
 // Contains PUB messages
