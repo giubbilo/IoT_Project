@@ -203,7 +203,8 @@ implementation
 						msg -> dest = buffer[0][2]; 
 						msg -> data = buffer[0][3];
 				 		msg -> topic = buffer[0][4]; 
-				 		if(msg -> type != 0)
+				 		// Check again if msg is a PUB message
+						if(msg -> type == 4) 
 				 		{
 							dbg("radio_rec", "Sending PUB messages to Node-RED\n");
 							// Send the message to Node-RED TCP node
@@ -240,7 +241,7 @@ implementation
 							  	}
 							}
 							close(sockfd);
-							sleep(16); // It is 16 because ThingSpeak can refresh only every 15s
+							sleep(16); // Emulate the periodic sending of messages
 						}			
     	 			}
     			}

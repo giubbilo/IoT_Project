@@ -24,12 +24,14 @@ typedef nx_struct Msg
 	*/
 }msg_t;
 
-uint8_t counterPub = 0;
-uint16_t indexConnReceived[8] = {0}; // Containing which node have sent and delivered a CONN message
-uint16_t indexConnAckReceived[8] = {0}; // Containing which node have received a CONNACK message
-uint16_t indexSubReceived[8] = {0}; // Containing which node have received a SUB message
-uint16_t indexSubAckReceived[8] = {0}; // Containing which node have received a SUBACK message
-uint16_t indexSubbedTopic[8] = {3, 3, 3, 3, 3, 3, 3, 3}; // Containing the topic of each node
+uint16_t indexConnReceived[8] = {0}; // Contains which node has received a CONN message
+uint16_t indexConnAckReceived[8] = {0}; // Contains which node has received a CONNACK message
+uint16_t indexSubReceived[8] = {0}; // Contains which node has received a SUB message
+uint16_t indexSubAckReceived[8] = {0}; // Contains which node has received a SUBACK message
+// Contains the subscribed topic of each node. Filled with 3 because we cannot have a topic that has "3" as integer
+uint16_t indexSubbedTopic[8] = {3, 3, 3, 3, 3, 3, 3, 3}; 
+// Contains PUB messages
+// 5x5 because we have 5 variables in our msg struct and 5 rows because it's enough to contain messages. It's like a queue.
 uint16_t buffer[MESSAGE_BUFFER][5] = {{0, 0, 0, 0, 0}, 
 									  {0, 0, 0, 0, 0}, 
 									  {0, 0, 0, 0, 0}, 
@@ -42,4 +44,3 @@ enum
 };
 
 #endif
-
