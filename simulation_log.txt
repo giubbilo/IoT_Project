@@ -96,342 +96,283 @@ DEBUG (6): Try to connect to PAN coordinator. Sending a CONN message
 DEBUG (4): Try to connect to PAN coordinator. Sending a CONN message
 DEBUG (7): Try to connect to PAN coordinator. Sending a CONN message
 DEBUG (2): Try to connect to PAN coordinator. Sending a CONN message
-DEBUG (1): PAN -> received CONN from node: 8
-DEBUG (1): PAN -> sending CONNACK to node: 8
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received CONN from node: 6
-DEBUG (1): PAN -> sending CONNACK to node: 6
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received CONN from node: 3
-DEBUG (1): PAN -> sending CONNACK to node: 3
-DEBUG (4): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received CONN from node: 2
-DEBUG (1): PAN -> sending CONNACK to node: 2
-DEBUG (3): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received CONN from node: 8
-DEBUG (1): PAN -> sending CONNACK to node: 8
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received CONN from node: 4
-DEBUG (1): PAN -> sending CONNACK to node: 4
-DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 5
+DEBUG (1): PAN -> sending CONNACK to node: 5
 DEBUG (6): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a CONN to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Received CONNACK! Node 4 connected
-DEBUG (5): Node 4 is sending a SUB to topic HUMIDITY
-DEBUG (4): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a CONN to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received CONN from node: 1
-DEBUG (1): PAN -> sending CONNACK to node: 1
-DEBUG (2): Packet lost! Sending again a CONN to PAN
-DEBUG (4): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
 DEBUG (1): PAN -> received CONN from node: 7
 DEBUG (1): PAN -> sending CONNACK to node: 7
 DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (4): Packet lost! Sending again a CONN to PAN
 DEBUG (6): Packet lost! Sending again a CONN to PAN
 DEBUG (3): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
 DEBUG (1): PAN -> received CONN from node: 8
 DEBUG (1): PAN -> sending CONNACK to node: 8
 DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received CONN from node: 1
-DEBUG (1): PAN -> sending CONNACK to node: 1
+DEBUG (9): Received CONNACK! Node 8 connected
+DEBUG (9): Node 8 is sending a SUB to topic LUMINOSITY
 DEBUG (2): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a CONN to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Received CONNACK! Node 1 connected
-DEBUG (2): Node 1 is sending a SUB to topic HUMIDITY
-DEBUG (3): Packet lost! Sending again a CONN to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (4): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (9): Packet lost! Sending again a SUB to PAN
 DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received CONN from node: 2
-DEBUG (1): PAN -> sending CONNACK to node: 2
-DEBUG (3): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (6): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Received CONNACK! Node 2 connected
-DEBUG (3): Node 2 is sending a SUB to topic LUMINOSITY
-DEBUG (4): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (4): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received CONN from node: 6
-DEBUG (1): PAN -> sending CONNACK to node: 6
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received SUB from node: 2
-DEBUG (1): PAN -> sending SUBACK to node: 2
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (6): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (4): Packet lost! Sending again a CONN to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received CONN from node: 5
-DEBUG (1): PAN -> sending CONNACK to node: 5
-DEBUG (6): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received CONN from node: 5
-DEBUG (1): PAN -> sending CONNACK to node: 5
-DEBUG (6): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Received CONNACK! Node 5 connected
-DEBUG (6): Node 5 is sending a SUB to topic LUMINOSITY
-DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 4
+DEBUG (1): PAN -> sending CONNACK to node: 4
+DEBUG (5): Packet lost! Sending again a CONN to PAN
 DEBUG (1): PAN -> received CONN from node: 3
 DEBUG (1): PAN -> sending CONNACK to node: 3
 DEBUG (4): Packet lost! Sending again a CONN to PAN
+DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 6
+DEBUG (1): PAN -> sending CONNACK to node: 6
 DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 2
+DEBUG (1): PAN -> sending CONNACK to node: 2
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (2): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received SUB from node: 8
+DEBUG (1): PAN -> sending SUBACK to node: 8
+DEBUG (9): Packet lost! Sending again a SUB to PAN
+DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (4): Packet lost! Sending again a CONN to PAN
+DEBUG (9): Received SUBACK! Node 8 subscribed to topic LUMINOSITY
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 25 lux
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (4): Packet lost! Sending again a CONN to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (2): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 6
+DEBUG (1): PAN -> sending CONNACK to node: 6
+DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 3
+DEBUG (1): PAN -> sending CONNACK to node: 3
+DEBUG (4): Packet lost! Sending again a CONN to PAN
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (6): Packet lost! Sending again a CONN to PAN
 DEBUG (4): Received CONNACK! Node 3 connected
 DEBUG (4): Node 3 is sending a SUB to topic TEMPERATURE
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 5
-DEBUG (1): PAN -> sending SUBACK to node: 5
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
 DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 2
-DEBUG (1): PAN -> sending SUBACK to node: 2
-DEBUG (3): Packet lost! Sending again a SUB to PAN
+DEBUG (2): Packet lost! Sending again a CONN to PAN
+DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (2): Packet lost! Sending again a CONN to PAN
+DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 2
+DEBUG (1): PAN -> sending CONNACK to node: 2
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received SUB from node: 3
+DEBUG (1): PAN -> sending SUBACK to node: 3
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (1): PAN -> received CONN from node: 6
+DEBUG (1): PAN -> sending CONNACK to node: 6
+DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 4
+DEBUG (1): PAN -> sending CONNACK to node: 4
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 7
+DEBUG (1): PAN -> sending CONNACK to node: 7
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 5
+DEBUG (1): PAN -> sending CONNACK to node: 5
+DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 2
+DEBUG (1): PAN -> sending CONNACK to node: 2
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 1
+DEBUG (1): PAN -> sending CONNACK to node: 1
+DEBUG (2): Packet lost! Sending again a CONN to PAN
+DEBUG (2): Received CONNACK! Node 1 connected
+DEBUG (2): Node 1 is sending a SUB to topic HUMIDITY
+DEBUG (1): PAN -> received SUB from node: 3
+DEBUG (1): PAN -> sending SUBACK to node: 3
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 5
+DEBUG (1): PAN -> sending CONNACK to node: 5
+DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 4
+DEBUG (1): PAN -> sending CONNACK to node: 4
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 7
+DEBUG (1): PAN -> sending CONNACK to node: 7
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 4
+DEBUG (1): PAN -> sending CONNACK to node: 4
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received SUB from node: 1
+DEBUG (1): PAN -> sending SUBACK to node: 1
+DEBUG (2): Packet lost! Sending again a SUB to PAN
+DEBUG (1): PAN -> received CONN from node: 5
+DEBUG (1): PAN -> sending CONNACK to node: 5
+DEBUG (6): Packet lost! Sending again a CONN to PAN
 DEBUG (1): PAN -> received CONN from node: 6
 DEBUG (1): PAN -> sending CONNACK to node: 6
 DEBUG (7): Packet lost! Sending again a CONN to PAN
 DEBUG (1): PAN -> received SUB from node: 3
 DEBUG (1): PAN -> sending SUBACK to node: 3
 DEBUG (4): Packet lost! Sending again a SUB to PAN
-DEBUG (4): Received SUBACK! Node 3 subscribed to topic TEMPERATURE
-DEBUG (4): Node 3 is sending a PUB to topic TEMPERATURE with payload: 33°C
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received SUB from node: 5
-DEBUG (1): PAN -> sending SUBACK to node: 5
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received PUB from node 3 to topic TEMPERATURE with payload: 33°C
-DEBUG (1): Forwarding PUB to node: 3
-DEBUG (1): Sending PUB messages to Node-RED
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (4): Node 3 is sending a PUB to topic TEMPERATURE with payload: 30°C
-DEBUG (1): PAN -> received SUB from node: 4
-DEBUG (1): PAN -> sending SUBACK to node: 4
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 4
-DEBUG (1): PAN -> sending SUBACK to node: 4
-DEBUG (5): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (5): Received SUBACK! Node 4 subscribed to topic HUMIDITY
-DEBUG (5): Node 4 is sending a PUB to topic HUMIDITY with payload: 38%
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received CONN from node: 8
-DEBUG (1): PAN -> sending CONNACK to node: 8
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received CONN from node: 8
-DEBUG (1): PAN -> sending CONNACK to node: 8
-DEBUG (9): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 5
+DEBUG (1): PAN -> sending CONNACK to node: 5
+DEBUG (6): Packet lost! Sending again a CONN to PAN
 DEBUG (1): PAN -> received CONN from node: 7
 DEBUG (1): PAN -> sending CONNACK to node: 7
 DEBUG (8): Packet lost! Sending again a CONN to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (4): Packet lost! Sending again a SUB to PAN
 DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Received CONNACK! Node 7 connected
-DEBUG (8): Node 7 is sending a SUB to topic HUMIDITY
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
 DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (2): Packet lost! Sending again a SUB to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 5
+DEBUG (1): PAN -> sending CONNACK to node: 5
+DEBUG (6): Packet lost! Sending again a CONN to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (6): Received CONNACK! Node 5 connected
+DEBUG (6): Node 5 is sending a SUB to topic LUMINOSITY
+DEBUG (1): PAN -> received CONN from node: 6
+DEBUG (1): PAN -> sending CONNACK to node: 6
+DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (2): Packet lost! Sending again a SUB to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (7): Received CONNACK! Node 6 connected
+DEBUG (7): Node 6 is sending a SUB to topic TEMPERATURE
+DEBUG (1): PAN -> received CONN from node: 2
+DEBUG (1): PAN -> sending CONNACK to node: 2
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (1): PAN -> received CONN from node: 2
+DEBUG (1): PAN -> sending CONNACK to node: 2
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (2): Packet lost! Sending again a SUB to PAN
+DEBUG (7): Packet lost! Sending again a SUB to PAN
+DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (3): Packet lost! Sending again a CONN to PAN
+DEBUG (3): Received CONNACK! Node 2 connected
+DEBUG (3): Node 2 is sending a SUB to topic LUMINOSITY
+DEBUG (2): Packet lost! Sending again a SUB to PAN
+DEBUG (7): Packet lost! Sending again a SUB to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (3): Packet lost! Sending again a SUB to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (2): Packet lost! Sending again a SUB to PAN
+DEBUG (7): Packet lost! Sending again a SUB to PAN
+DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (3): Packet lost! Sending again a SUB to PAN
 DEBUG (1): PAN -> received SUB from node: 1
 DEBUG (1): PAN -> sending SUBACK to node: 1
 DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (2): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
 DEBUG (2): Received SUBACK! Node 1 subscribed to topic HUMIDITY
 DEBUG (2): Node 1 is sending a PUB to topic HUMIDITY with payload: 25%
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
 DEBUG (1): PAN -> received SUB from node: 2
 DEBUG (1): PAN -> sending SUBACK to node: 2
 DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received CONN from node: 8
-DEBUG (1): PAN -> sending CONNACK to node: 8
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (3): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received CONN from node: 6
-DEBUG (1): PAN -> sending CONNACK to node: 6
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received SUB from node: 2
-DEBUG (1): PAN -> sending SUBACK to node: 2
-DEBUG (3): Packet lost! Sending again a SUB to PAN
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (7): Packet lost! Sending again a SUB to PAN
 DEBUG (3): Received SUBACK! Node 2 subscribed to topic LUMINOSITY
 DEBUG (3): Node 2 is sending a PUB to topic LUMINOSITY with payload: 28 lux
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (5): Packet lost! Sending again a CONN to PAN
 DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 7
-DEBUG (1): PAN -> sending SUBACK to node: 7
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 7
-DEBUG (1): PAN -> sending SUBACK to node: 7
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (1): PAN -> received SUB from node: 7
-DEBUG (1): PAN -> sending SUBACK to node: 7
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received CONN from node: 6
-DEBUG (1): PAN -> sending CONNACK to node: 6
-DEBUG (7): Packet lost! Sending again a CONN to PAN
-DEBUG (7): Received CONNACK! Node 6 connected
-DEBUG (7): Node 6 is sending a SUB to topic TEMPERATURE
-DEBUG (1): PAN -> received SUB from node: 5
-DEBUG (1): PAN -> sending SUBACK to node: 5
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received CONN from node: 8
-DEBUG (1): PAN -> sending CONNACK to node: 8
-DEBUG (9): Packet lost! Sending again a CONN to PAN
-DEBUG (9): Received CONNACK! Node 8 connected
-DEBUG (9): Node 8 is sending a SUB to topic LUMINOSITY
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a SUB to PAN
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 6
-DEBUG (1): PAN -> sending SUBACK to node: 6
-DEBUG (7): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 6
-DEBUG (1): PAN -> sending SUBACK to node: 6
-DEBUG (7): Packet lost! Sending again a SUB to PAN
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 7
-DEBUG (1): PAN -> sending SUBACK to node: 7
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 5
-DEBUG (1): PAN -> sending SUBACK to node: 5
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 8
-DEBUG (1): PAN -> sending SUBACK to node: 8
-DEBUG (9): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Received SUBACK! Node 8 subscribed to topic LUMINOSITY
-DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 25 lux
-DEBUG (1): PAN -> received SUB from node: 5
-DEBUG (1): PAN -> sending SUBACK to node: 5
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received SUB from node: 7
-DEBUG (1): PAN -> sending SUBACK to node: 7
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (7): Packet lost! Sending again a SUB to PAN
-DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 25 lux
+DEBUG (1): PAN -> received PUB from node 2 to topic LUMINOSITY with payload: 28 lux
 DEBUG (1): Forwarding PUB to node: 2
 DEBUG (1): Forwarding PUB to node: 8
 DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
 DEBUG (6): Packet lost! Sending again a SUB to PAN
-DEBUG (8): Packet lost! Sending again a SUB to PAN
-DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 20 lux
 DEBUG (1): PAN -> received SUB from node: 6
 DEBUG (1): PAN -> sending SUBACK to node: 6
+DEBUG (7): Packet lost! Sending again a SUB to PAN
+DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received CONN from node: 4
+DEBUG (1): PAN -> sending CONNACK to node: 4
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received SUB from node: 3
+DEBUG (1): PAN -> sending SUBACK to node: 3
+DEBUG (4): Packet lost! Sending again a SUB to PAN
+DEBUG (4): Received SUBACK! Node 3 subscribed to topic TEMPERATURE
+DEBUG (4): Node 3 is sending a PUB to topic TEMPERATURE with payload: 33°C
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (7): Packet lost! Sending again a SUB to PAN
+DEBUG (7): Packet lost! Sending again a SUB to PAN
+DEBUG (1): PAN -> received SUB from node: 5
+DEBUG (1): PAN -> sending SUBACK to node: 5
+DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (1): PAN -> received CONN from node: 4
+DEBUG (1): PAN -> sending CONNACK to node: 4
+DEBUG (5): Packet lost! Sending again a CONN to PAN
+DEBUG (5): Received CONNACK! Node 4 connected
+DEBUG (5): Node 4 is sending a SUB to topic HUMIDITY
+DEBUG (1): PAN -> received SUB from node: 4
+DEBUG (1): PAN -> sending SUBACK to node: 4
+DEBUG (5): Packet lost! Sending again a SUB to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (5): Packet lost! Sending again a SUB to PAN
+DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (7): Packet lost! Sending again a SUB to PAN
+DEBUG (5): Received SUBACK! Node 4 subscribed to topic HUMIDITY
+DEBUG (5): Node 4 is sending a PUB to topic HUMIDITY with payload: 38%
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (1): PAN -> received SUB from node: 6
+DEBUG (1): PAN -> sending SUBACK to node: 6
+DEBUG (7): Packet lost! Sending again a SUB to PAN
+DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (7): Packet lost! Sending again a SUB to PAN
+DEBUG (8): Packet lost! Sending again a CONN to PAN
 DEBUG (7): Packet lost! Sending again a SUB to PAN
 DEBUG (6): Packet lost! Sending again a SUB to PAN
 DEBUG (7): Received SUBACK! Node 6 subscribed to topic TEMPERATURE
 DEBUG (7): Node 6 is sending a PUB to topic TEMPERATURE with payload: 15°C
-DEBUG (8): Packet lost! Sending again a SUB to PAN
+DEBUG (1): PAN -> received SUB from node: 5
+DEBUG (1): PAN -> sending SUBACK to node: 5
+DEBUG (6): Packet lost! Sending again a SUB to PAN
 DEBUG (1): PAN -> received PUB from node 6 to topic TEMPERATURE with payload: 15°C
 DEBUG (1): Forwarding PUB to node: 3
 DEBUG (1): Forwarding PUB to node: 6
 DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (1): PAN -> received CONN from node: 7
+DEBUG (1): PAN -> sending CONNACK to node: 7
+DEBUG (8): Packet lost! Sending again a CONN to PAN
+DEBUG (8): Received CONNACK! Node 7 connected
+DEBUG (8): Node 7 is sending a SUB to topic HUMIDITY
 DEBUG (1): PAN -> received SUB from node: 5
 DEBUG (1): PAN -> sending SUBACK to node: 5
 DEBUG (6): Packet lost! Sending again a SUB to PAN
+DEBUG (1): PAN -> received SUB from node: 7
+DEBUG (1): PAN -> sending SUBACK to node: 7
+DEBUG (8): Packet lost! Sending again a SUB to PAN
 DEBUG (1): PAN -> received SUB from node: 7
 DEBUG (1): PAN -> sending SUBACK to node: 7
 DEBUG (8): Packet lost! Sending again a SUB to PAN
 DEBUG (8): Received SUBACK! Node 7 subscribed to topic HUMIDITY
 DEBUG (8): Node 7 is sending a PUB to topic HUMIDITY with payload: 20%
-DEBUG (1): PAN -> received SUB from node: 5
-DEBUG (1): PAN -> sending SUBACK to node: 5
-DEBUG (6): Packet lost! Sending again a SUB to PAN
 DEBUG (1): PAN -> received SUB from node: 5
 DEBUG (1): PAN -> sending SUBACK to node: 5
 DEBUG (6): Packet lost! Sending again a SUB to PAN
@@ -441,13 +382,23 @@ DEBUG (1): Forwarding PUB to node: 4
 DEBUG (1): Forwarding PUB to node: 7
 DEBUG (1): Sending PUB messages to Node-RED
 DEBUG (8): Node 7 is sending a PUB to topic HUMIDITY with payload: 28%
+DEBUG (1): PAN -> received PUB from node 7 to topic HUMIDITY with payload: 28%
+DEBUG (1): Forwarding PUB to node: 1
+DEBUG (1): Forwarding PUB to node: 4
+DEBUG (1): Forwarding PUB to node: 7
+DEBUG (1): Sending PUB messages to Node-RED
 DEBUG (1): PAN -> received SUB from node: 5
 DEBUG (1): PAN -> sending SUBACK to node: 5
-DEBUG (6): Packet lost! Sending again a SUB to PAN
 DEBUG (6): Packet lost! Sending again a SUB to PAN
 DEBUG (6): Received SUBACK! Node 5 subscribed to topic LUMINOSITY
 DEBUG (6): Node 5 is sending a PUB to topic LUMINOSITY with payload: 12 lux
 DEBUG (1): PAN -> received PUB from node 5 to topic LUMINOSITY with payload: 12 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 20 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 20 lux
 DEBUG (1): Forwarding PUB to node: 2
 DEBUG (1): Forwarding PUB to node: 5
 DEBUG (1): Forwarding PUB to node: 8
@@ -488,9 +439,97 @@ DEBUG (1): Forwarding PUB to node: 2
 DEBUG (1): Forwarding PUB to node: 5
 DEBUG (1): Forwarding PUB to node: 8
 DEBUG (1): Sending PUB messages to Node-RED
-Traceback (most recent call last):
-  File "RunSimulationScript.py", line 150, in <module>
-    t.runNextEvent()
-  File "/home/user/Documents/src/TOSSIM.py", line 260, in runNextEvent
-    def runNextEvent(*args): return _TOSSIM.Tossim_runNextEvent(*args)
-KeyboardInterrupt
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 11 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 11 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 24 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 24 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 12 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 12 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 19 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 19 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 37 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 37 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 27 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 27 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 20 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 20 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 37 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 37 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 28 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 28 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 13 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 13 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 38 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 38 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 21 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 21 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 39 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 39 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 28 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 28 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+DEBUG (9): Node 8 is sending a PUB to topic LUMINOSITY with payload: 24 lux
+DEBUG (1): PAN -> received PUB from node 8 to topic LUMINOSITY with payload: 24 lux
+DEBUG (1): Forwarding PUB to node: 2
+DEBUG (1): Forwarding PUB to node: 5
+DEBUG (1): Forwarding PUB to node: 8
+DEBUG (1): Sending PUB messages to Node-RED
+
+
+
+Simulation finished!
