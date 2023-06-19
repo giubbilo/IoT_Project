@@ -23,12 +23,13 @@ The following features need to be implemented:
 ## How to run it
 1. Open the terminal
 2. Start Node-RED launching `node-red` command or install it if you do not have it
-3. Import the flow on Node-RED from `Node-RED_flow.pdf`
-4. Open [our ThingSpeak public channel](https://thingspeak.com/channels/2185815) where you can see the charts
-5. Open another terminal window
-6. Move to `src/`
-7. Launch this command `make micaz sim`
-8. Once the compile procedure is done, launch `RunSimulationScript.py`
+3. Open you browser and go to `localhost:1880`
+4. Import the flow on Node-RED from `Node-RED_flow.pdf`
+5. Open [our ThingSpeak public channel](https://thingspeak.com/channels/2185815) where you can see the charts
+6. Open another terminal window
+7. Move to `src/`
+8. Launch this command `make micaz sim`
+9. Once the compile procedure is done, launch `RunSimulationScript.py`
 
 ## Credits
 Developed by Davide Giannubilo & Salvatore Gabriele Karra | June 2023
