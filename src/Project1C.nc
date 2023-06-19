@@ -126,7 +126,6 @@ implementation
 						else if(msg -> topic == 2) dbg("radio_rec", "Received SUBACK! Node %d subscribed to topic LUMINOSITY\n", TOS_NODE_ID - 1);
 						indexSubAckReceived[TOS_NODE_ID - 2] = TOS_NODE_ID - 1;
 						indexSubbedTopic[TOS_NODE_ID - 2] = msg -> topic;
-						//for (i = 0; i < 8; ++i) { printf("%u ", indexConnAckReceived[i]); } printf("\n"); // CONNACK received correctly
 						//for (i = 0; i < 8; ++i) { printf("%u ", indexSubAckReceived[i]); } printf("\n"); // SUBACK received correctly
 						//for (i = 0; i < 8; ++i) { printf("%u ", indexSubbedTopic[i]); } printf("\n"); // Topics of the nodes subscribed
 					}
@@ -168,7 +167,6 @@ implementation
     					msg -> dest = msg -> sender;
     					msg -> sender = 1;
 						call AMSend.send(msg -> dest, bufPtr, sizeof(msg_t));
-						//for(i = 0; i < 8; ++i) { printf("%u ", indexConnReceived[i]); } printf("\n"); // CONN received correctly
     					//for(i = 0; i < 8; ++i) { printf("%u ", indexSubReceived[i]); } printf("\n"); // SUB received correctly
     	 			}
     	 			// PUB received
@@ -278,4 +276,3 @@ implementation
 		}
   	}
 } // END implementation
-
