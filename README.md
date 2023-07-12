@@ -1,5 +1,5 @@
 # Project1 - LIGHTWEIGHT PUBLISH-SUBSCRIBE APPLICATION PROTOCOL
-Internet of Things course | II semester a.y. 22/23 | Politecnico di Milano
+Internet of Things course | 2° semester a.y. 22/23 | Politecnico di Milano
 
 ## Specification
 Design and implement in TinyOS a lightweight publishsubscribe application protocol similar to MQTT and test it with simulations
