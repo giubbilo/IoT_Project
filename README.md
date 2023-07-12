@@ -25,7 +25,7 @@ The following features need to be implemented:
 2. Start Node-RED launching `node-red` command or install it if you do not have it
 3. Open you browser and go to `localhost:1880`
 4. Import the flow on Node-RED from `Node-RED_flow.pdf`
-5. Open [our ThingSpeak public channel](https://thingspeak.com/channels/2185815) where you can see the charts
+5. Open [our ThingSpeak public channel](https://thingspeak.com/channels/2185815) where you can see the charts with the latest PUBLISH messages done by the nodes
 6. Open another terminal window
 7. Move to `src/`
 8. Launch this command `make micaz sim`
